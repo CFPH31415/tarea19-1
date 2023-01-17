@@ -1,0 +1,17 @@
+<h1> Pokemones </h1>
+<input [(ngModel)]="searchTerm" (keyup)="searchPokemon()" placeholder="Nombre de pokemon">
+<button class="form-control btn btn-primary" (click)="resetSearch()">Buscar otro pokemon</button>
+
+<div class="container">
+    <div class="row">
+        
+        <div *ngFor="let dato of data" class="col-md-4">
+            <img src="{{dato.image}}" alt="" width="40%" class="img-fluid">
+            <p class="text-align font-weight-bold">{{dato.orden}}</p> 
+            <p class="text-align text-uppercase">{{dato.name}}</p> 
+        </div>
+    </div>
+</div>
+
+
+<router-outlet></router-outlet>
